@@ -2,14 +2,12 @@
 CREATE TABLE TimeDimension (
     tweet_created_key INT PRIMARY KEY,
     tweet_created DATETIME,
-    -- Add additional time-related attributes here
 );
 
 -- Create the Location Dimension table
 CREATE TABLE LocationDimension (
     tweet_location_key INT PRIMARY KEY,
     tweet_location NVARCHAR(255),
-    -- Add additional location-related attributes here
 );
 
 -- Create the User Dimension table
@@ -17,14 +15,12 @@ CREATE TABLE UserDimension (
     user_key INT PRIMARY KEY,
     name NVARCHAR(255),
     user_timezone NVARCHAR(255),
-    -- Add additional user-related attributes here
 );
 
 -- Create the Airline Dimension table
 CREATE TABLE AirlineDimension (
     airline_key INT PRIMARY KEY,
     airline NVARCHAR(255),
-    -- Add additional airline-related attributes here
 );
 
 -- Create the Sentiment Dimension table
@@ -32,7 +28,6 @@ CREATE TABLE SentimentDimension (
     sentiment_key INT PRIMARY KEY,
     airline_sentiment NVARCHAR(255),
     negativereason NVARCHAR(255),
-    -- Add additional sentiment-related attributes here
 );
 
 -- Create the Fact table (SentimentFact)
@@ -49,5 +44,4 @@ CREATE TABLE SentimentFact (
     negativereason_confidence FLOAT,
     retweet_count INT,
     text NVARCHAR(MAX)
-    -- Add additional columns from the original CSV here
 );
